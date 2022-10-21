@@ -1,4 +1,7 @@
 import csv
+import datasets
+import pandas as pd
+import os
 
 
 class Itinerary:
@@ -26,12 +29,18 @@ class Itinerary:
 
 
 itineraries = []
+itinerary_data = []
 
-with open('195JourneyDataExtract01Jan2020-07Jan2020 (1).csv', 'r') as f:
-    reader = csv.reader(f)
+# for file in os.listdir('datasets'):
+#     if file.endswith('.csv'):
+#         master_df = pd.concat([pd.read_csv(f'datasets/{file}')])
+#
+# master_df.to_csv('Master Dataset.CSV')
+
+with open('datasets/195JourneyDataExtract01Jan2020-07Jan2020 (1).csv', 'r') as csv_file:
+    reader = csv.reader(csv_file)
+    next(reader)  # skip over the field names of the csv files
     for row in reader:
-        #print(row)
-        itineraries.append({'rental_id': row[0], 'duration': (row[1]), })
+        itineraries.append(Itinerary(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8]))
 
-    print(itineraries[1]['rental_id'])
-
+print(itineraries[0].start_station_name)
