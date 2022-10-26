@@ -37,6 +37,8 @@ itinerary_data = []
 #
 # master_df.to_csv('Master Dataset.CSV')
 
+
+# add try-catch block for when data for the master is being loaded in
 with open('datasets/195JourneyDataExtract01Jan2020-07Jan2020 (1).csv', 'r') as csv_file:
     reader = csv.reader(csv_file)
     next(reader)  # skip over the field names of the csv files
