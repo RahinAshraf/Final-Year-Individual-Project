@@ -1,0 +1,4 @@
+Rental Id,Duration,Bike Id,End Date,EndStation Id,EndStation Name,Start Date,StartStation Id,StartStation Name
+94275117,1320,12244,14/01/2020 08:23,345,"Flood Street, Chelsea",14/01/2020 08:01,689,"Spanish Road, Clapham Junction"
+94288619,1680,16179,14/01/2020 18:03,689,"Spanish Road, Clapham Junction",14/01/2020 17:35,345,"Flood Street, Chelsea"
+94148391,960,10800,08/01/2020 17:59,32,"Leonard Circus , Shoreditch",08/01/2020 17:43,189,"Claremont Square, Angel"
