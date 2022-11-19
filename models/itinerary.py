@@ -3,18 +3,17 @@ import datasets
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
-from geopy.geocoders import Nominatim
-from datetime import datetime
+import datetime
 
 
 class Itinerary:
     rental_id = 0
     duration = 0
     bike_id = 0
-    end_date = "No end date"  # this needs to be changed to use objects of type 'datetime'
+    end_date = datetime.datetime.now()
     end_station_id = 0
     end_station_name = "No end station name"
-    start_date = "No start date"  # this needs to be changed to use objects of type 'datetime'
+    start_date = datetime.datetime.now()
     start_station_id = 0
     start_station_name = "No start station name"
 
@@ -33,16 +32,16 @@ class Itinerary:
 
 itineraries = []
 
-with open('datasets/195JourneyDataExtract01Jan2020-07Jan2020 (1).csv', 'r') as csv_file:
-    reader = csv.reader(csv_file)
-    next(reader)  # skip over the field names of the csv files
-    my_list = []
-    my_other_list = []
-    for row in reader:
-        itineraries.append(Itinerary(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8]))
-        my_list.append(row[1])
-        my_other_list.append(row[2])
-print(itineraries[0].start_station_name)
+# with open('datasets/195JourneyDataExtract01Jan2020-07Jan2020 (1).csv', 'r') as csv_file:
+#     reader = csv.reader(csv_file)
+#     next(reader)  # skip over the field names of the csv files
+#     my_list = []
+#     my_other_list = []
+#     for row in reader:
+#         itineraries.append(Itinerary(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8]))
+#         my_list.append(row[1])
+#         my_other_list.append(row[2])
+# print(itineraries[0].start_station_name)
 
 # TO-DO NEXT: CONVERT STRINGS OF DATES IN FIELDS TO DATETIME OBJECTS
 datetime_str = '09/19/18 13:55:26'
@@ -50,16 +49,5 @@ datetime_object = datetime.strptime(datetime_str, '%m/%d/%y %H:%M:%S')
 print(type(datetime_object))
 print(datetime_object)  # printed in default format
 
-# x = [1, 2, 3, 4, 5]
-# y = [1, 2, 0, 0, 0]
-# plt.plot(x, y)
-# plt.ylabel('some numbers')
-# plt.show()
 
 
-# address='Victoria Park Road, Hackney Central'
-# geolocator = Nominatim(user_agent="me")
-# location = geolocator.geocode(address)
-# print(type(location))
-# print(location.address)
-# print((location.latitude, location.longitude))

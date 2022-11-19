@@ -3,7 +3,7 @@ import csv
 
 class Bike:
     bike_id = 0
-    current_bike_station = ""
+    current_bike_station = "No assigned bike station"
     distance_travelled = 0
 
     def __init__(self, bike_id, current_bike_station, distance_travelled):

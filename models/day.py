@@ -6,4 +6,4 @@ class Day:
 
 
     def __init__(self):
-          # check Notion
+        pass
